@@ -8,7 +8,7 @@ int scanStr(char str[]);
 int main()
 {
 	char str[STRING_LENGHT] = {0};
-	int stringLenght = 0;
+	int stringLength = 0;
 	printf("Enter string (max lenght 100 chars): ");
 	stringLenght = scanStr(str);
 	printf("%d\n", stringLenght);
