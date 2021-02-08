@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <wchar.h>
 
 #define	SUM_CARDS 52
 #define SUM_SHAPES 4
@@ -13,7 +14,6 @@ void cardsInArr(int cards[SUM_CARDS][SHAPE_CARDS]);
 int main()
 {
 	int cards[SUM_SHAPES][SHAPE_CARDS] = {0};
-	int shape[SUM_SHAPES] = {♥, ♦, ♣, ♠};
 	cardsInArr(cards);
 	
 	
@@ -25,7 +25,6 @@ int main()
 		{
 			printf("%d ", cards[row][col]);
 		}
-		printf("%d \n", shape[row]);
 	}
 }
 
