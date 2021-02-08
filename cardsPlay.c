@@ -5,7 +5,7 @@
 #define SUN_SHAPES 4
 #define SHAPE_CARDS 13
 
-void cardsInArr(cards);
+void cardsInArr(int cards[][]);
 
 
 int main()
@@ -25,7 +25,7 @@ void cardsInArr(int cards[][])
 	int i = 0;
 	int j = 0;
 	
-	for(j = 0; J <= SUN_SHAPES; J++)
+	for(j = 0; j <= SUN_SHAPES; ++j)
 	{
 		for(i = 0; i <= SHAPE_CARDS; ++i)
 		{
