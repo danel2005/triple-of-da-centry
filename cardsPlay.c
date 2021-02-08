@@ -5,9 +5,23 @@
 #define SUN_SHAPES 4
 #define SHAPE_CARDS 13
 
+void cardsInArr(cards);
+
+
 int main()
 {
-	int cards[SUN_SHAPES][SHAPE_CARDS] = {0}
+	int cards[SUN_SHAPES][SHAPE_CARDS] = {0};
+	cardsInArr(cards);
+	
+}
+
+/*
+the function puts every card in the array
+input: array of the cards
+output: none
+*/
+void cardsInArr(int cards[][])
+{
 	int i = 0;
 	int j = 0;
 	
@@ -19,4 +33,3 @@ int main()
 		}
 	}
 }
-
