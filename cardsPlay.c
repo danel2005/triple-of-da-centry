@@ -1,18 +1,32 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define	SUM_CARDS 52
-#define SUN_SHAPES 4
+#define SUM_SHAPES 4
 #define SHAPE_CARDS 13
 
-void cardsInArr(int cards[][]);
+void cardsInArr(int cards[SUM_CARDS][SHAPE_CARDS]);
 
 
 int main()
 {
-	int cards[SUN_SHAPES][SHAPE_CARDS] = {0};
+	int cards[SUM_SHAPES][SHAPE_CARDS] = {0};
+	int shape[SUM_SHAPES] = {♥, ♦, ♣, ♠};
 	cardsInArr(cards);
 	
+	
+	int col = 0;
+	int row = 0;
+	for(row = 0; row < SUM_SHAPES; ++row)
+	{
+		for(col = 0; col < SHAPE_CARDS; ++col)
+		{
+			printf("%d ", cards[row][col]);
+		}
+		printf("%d \n", shape[row]);
+	}
 }
 
 /*
@@ -20,16 +34,18 @@ the function puts every card in the array
 input: array of the cards
 output: none
 */
-void cardsInArr(int cards[][])
+void cardsInArr(int cards[SUM_CARDS][SHAPE_CARDS])
 {
-	int i = 0;
-	int j = 0;
+	int col = 0;
+	int row = 0;
 	
-	for(j = 0; j <= SUN_SHAPES; ++j)
+	for(row = 0; row < SUM_SHAPES; ++row)
 	{
-		for(i = 0; i <= SHAPE_CARDS; ++i)
+		for(col = 0; col < SHAPE_CARDS; ++col)
 		{
-			cards[j][i] = i;
+			cards[row][col] = col + 1;
 		}
 	}
 }
+
+
