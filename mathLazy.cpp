@@ -9,8 +9,8 @@ unsigned int baranoliFunc(int n, int k)
 	int calcD = 1;
 	int result = 1;
 
-	for (int i = 1; i <= n; i++) calcN *= i;//n!
-	for (int i = 1; i <= k; i++) calcK *= i;//k!ddd
+	for (int i = 1; i <= n; i++) calcN *= i;//n! זה מחשב את ה
+	for (int i = 1; i <= k; i++) calcK *= i;//k! זה מחשב את ה
 	for (int i = 1; i <= n - k; i++) calcD *= i;//(n - k)!
 
 	result = calcK * calcD;
@@ -22,7 +22,7 @@ unsigned int baranoliFunc(int n, int k)
 double realCalc(float n, float k, float pr, bool DIY, int baranoliNum)
 {
 	double baranoli = 0.0f;
-	double result = 0;
+	double result = 0.0f;
 	
 	DIY ? baranoli = baranoliNum : baranoli = baranoliFunc(n, k);
 	result = baranoli * pow(pr, k) * pow(1 - pr, n - k);
@@ -39,7 +39,7 @@ void calc(float n, float k, float pr, bool DIY, int baranoliNum) {
 	std::cout << "k: " << (int)k << std::endl;	
 	std::cout << "p^k = " << pow(pr, k) << std::endl;
 	std::cout << "(1 - p)^(n - k) = " << pow(1 - pr, n - k) << std::endl;
-	std::cout << "The result is: " << realCalc(n, k, pr, DIY, baranoliNum);
+	std::cout << "The result is: " << realCalc(n, k, pr, DIY, baranoliNum) << std::endl;
 }
 
 bool menu()
@@ -90,7 +90,7 @@ bool menu()
 	if(rangeK > n || rangeK2 > n)
 	{
 		return false;
-	}	
+	}
 
 	std::cout << "Enter p: ";
 	std::cin >> p;
@@ -109,7 +109,7 @@ bool menu()
 
 int main()
 {
-	if(!menu()) std::cout << "ERROR! K CAN NEVER BE BIGGER THAN N!";
+	if(!menu()) std::cerr << "ERROR! K CAN NEVER BE BIGGER THAN N!";
 	
 	return 0;
 }
