@@ -10,7 +10,6 @@
 
 void cardsInArr(int cards[SUM_CARDS][SHAPE_CARDS]);
 
-
 int main()
 {
 	int cards[SUM_SHAPES][SHAPE_CARDS] = {0};

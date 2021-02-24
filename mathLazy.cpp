@@ -16,6 +16,7 @@ unsigned int baranoliFunc(int n, int k)
 	result = calcK * calcD;
 	result = calcN / result;
 
+	std::cout << "Baranoli: " << result << std::endl;
 	return result;
 }
 
@@ -94,7 +95,7 @@ bool menu()
 
 	std::cout << "Enter p: ";
 	std::cin >> p;
-	
+
 	for(int i = rangeK; i <= rangeK2; i++)
 	{
 		calc(n, i, p, bronliDIY, baranoliNum);

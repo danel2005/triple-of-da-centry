@@ -27,25 +27,22 @@ int main(void)
 		{
 			usedWord[words[row][i] - 'a'] = 1;
 		}
-
-	}
-
-	for(int i = 0; i < SUM_LETTERS; i++)
-	{
-		printf("%d ", usedWord[i]);
-		if(usedWord[i] == 0)
+		for(int i = 0; i < SUM_LETTERS; i++)
 		{
-			finish = 0;
+			if(usedWord[i] == 0)
+			{
+				finish = 0;
+			}
 		}
 	}
 
-	if(finish == 1) // if pangram wroted
+	if(finish == 0) // if pangram wroted
 	{
-		printf("It's a pangram?\nYes!");
+		printf("It's a pangram?\nNo");
 	}
 	else// if pangram not wroted
 	{
-		printf("It's a pangram?\nNo");
+		printf("It's a pangram?\nYes!");
 	}
 	
 	
