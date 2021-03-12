@@ -107,10 +107,37 @@ char finish(void)
 
 char game(difficulty)
 {
-	
+	srand(time(NULL));
+	char win = ' ';
+	int pcWins = 0;
+	int userWins = 0;
+	while((pcWins == BEST_OF / 2 + 1) || (userWins == BEST_OF / 2 + 1))
+	{
+		printf("Enter your choice (r - Rock / p - Paper / s - Scissors): ");
+		scanf("%c", &userChoice);
+		if(difficulty == 2)
+		{
+			if(userChoice == 'r')
+			{
+				pcChoice = 'p';
+			}
+			
+			if(userChoice == 'p')
+			{
+				pcChoice = 's';
+			}
+			
+			if(userChoice == 's')
+			{
+				pcChoice = 'r';
+			}
+			pcWins++;
+		}
+	}
+	return win;
 }
 
-/*
+
 char game(int difficultyLevel)
 {
 	srand(time(NULL));
@@ -300,5 +327,4 @@ char pcRand(int difficulty, int userChoice)
 	}
 	return pcChoice;
 }
-
 */
