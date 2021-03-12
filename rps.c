@@ -5,7 +5,8 @@
 #define BEST_OF 3
 
 int start(void);
-char finish();
+char finish(void);
+char game(difficulty);
 /*
 char game(int difficultyLevel);
 char pcRand(int difficulty, int userChoice);
@@ -22,6 +23,9 @@ int main()
 		
 		/*
 		win = game(difficultyLevel);
+		*/
+		
+		win = game(difficultyLevel);
 		if(win == 'w')
 		{
 			printf("  _______   _______    ____    __    ____ .______   \n /  _____| /  _____|   \\   \\  /  \\  /   / |   _  \\  \n|  |  __  |  |  __      \\   \\/    \\/   /  |  |_)  | \n|  | |_ | |  | |_ |      \\            /   |   ___/  \n|  |__| | |  |__| |       \\    /\\    /    |  |      \n \\______|  \\______|        \\__/  \\__/     | _|      ");
@@ -31,7 +35,7 @@ int main()
 		{
 			printf("You lose the game...");
 		}
-		*/
+		
 		
 		play = finish(); //Finish
 	}
@@ -85,7 +89,7 @@ int start(void)
 	return difficultyLevel;
 }
 
-char finish()
+char finish(void)
 {
 	char play = ' ';
 	do //play again
@@ -101,6 +105,10 @@ char finish()
 	return play;
 }
 
+char game(difficulty)
+{
+	
+}
 
 /*
 char game(int difficultyLevel)
