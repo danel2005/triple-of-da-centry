@@ -27,6 +27,7 @@ int main()
 		*/
 		
 		win = game(difficultyLevel);
+		
 		if(win == 'w')
 		{
 			printf("  _______   _______    ____    __    ____ .______   \n /  _____| /  _____|   \\   \\  /  \\  /   / |   _  \\  \n|  |  __  |  |  __      \\   \\/    \\/   /  |  |_)  | \n|  | |_ | |  | |_ |      \\            /   |   ___/  \n|  |__| | |  |__| |       \\    /\\    /    |  |      \n \\______|  \\______|        \\__/  \\__/     | _|      ");
@@ -105,10 +106,11 @@ char game(difficulty)
 	int userWins = 0;
 	char userChoice = ' ';
 	char pcChoice = ' ';
-	while((pcWins == BEST_OF / 2 + 1) || (userWins == BEST_OF / 2 + 1))
+	while((pcWins <= BEST_OF / 2 + 1) && (userWins <= BEST_OF / 2 + 1))
 	{
 		printf("Enter your choice (r - Rock / p - Paper / s - Scissors): ");
 		scanf("%c", &userChoice);
+		getchar();
 		if(difficulty == 2)
 		{
 			if(userChoice == 'r')
