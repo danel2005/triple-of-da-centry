@@ -6,7 +6,8 @@
 
 int start(void);
 char finish(void);
-char game(difficulty);
+char game(int difficulty);
+
 /*
 char game(int difficultyLevel);
 char pcRand(int difficulty, int userChoice);
@@ -75,15 +76,6 @@ int start(void)
 			printf("You get impossible difficulty level!");
 			return 2;
 		}
-		
-		do
-		{
-			printf("Do you want to change the difficulty?(y/n): ");
-			scanf("%c", &agree);
-			getchar();
-			printf("\n");
-		}while((agree != 'y') && (agree != 'n'));
-
 	}while(agree == 'y');
 	
 	return difficultyLevel;
@@ -111,6 +103,8 @@ char game(difficulty)
 	char win = ' ';
 	int pcWins = 0;
 	int userWins = 0;
+	char userChoice = ' ';
+	char pcChoice = ' ';
 	while((pcWins == BEST_OF / 2 + 1) || (userWins == BEST_OF / 2 + 1))
 	{
 		printf("Enter your choice (r - Rock / p - Paper / s - Scissors): ");
@@ -137,7 +131,7 @@ char game(difficulty)
 	return win;
 }
 
-
+/*
 char game(int difficultyLevel)
 {
 	srand(time(NULL));
