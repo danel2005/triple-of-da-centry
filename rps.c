@@ -31,11 +31,11 @@ int main()
 		if(win == 'w')
 		{
 			printf("  _______   _______    ____    __    ____ .______   \n /  _____| /  _____|   \\   \\  /  \\  /   / |   _  \\  \n|  |  __  |  |  __      \\   \\/    \\/   /  |  |_)  | \n|  | |_ | |  | |_ |      \\            /   |   ___/  \n|  |__| | |  |__| |       \\    /\\    /    |  |      \n \\______|  \\______|        \\__/  \\__/     | _|      ");
-			printf("You win the game!");
+			printf("\n\nYou win the game!");
 		}
 		else
 		{
-			printf("You lose the game...");
+			printf("\nYou lose the game...");
 		}
 		
 		
@@ -106,11 +106,15 @@ char game(difficulty)
 	int userWins = 0;
 	char userChoice = ' ';
 	char pcChoice = ' ';
-	while((pcWins <= BEST_OF / 2 + 1) && (userWins <= BEST_OF / 2 + 1))
+	int roundWinner = 3;
+	int random = 0;
+	while((pcWins <= BEST_OF / 2) && (userWins <= BEST_OF / 2))
 	{
-		printf("Enter your choice (r - Rock / p - Paper / s - Scissors): ");
-		scanf("%c", &userChoice);
-		getchar();
+		do{
+			printf("Enter your choice (r - Rock / p - Paper / s - Scissors): ");
+			scanf("%c", &userChoice);
+			getchar();
+		}while((userChoice != 'r') && (userChoice != 'p') && (userChoice != 's'));
 		if(difficulty == 2)
 		{
 			if(userChoice == 'r')
@@ -127,9 +131,100 @@ char game(difficulty)
 			{
 				pcChoice = 'r';
 			}
+		}
+		
+		if(difficulty == 1)
+		{
+			random = rand() % 3;
+			if(random == 0)
+			{
+				pcChoice = 'r';
+			}
+			
+			if(random == 1)
+			{
+				pcChoice = 'p';
+			}
+			
+			if(random == 2)
+			{
+				pcChoice = 's';
+			}
+		}
+		
+		if(difficulty == 0)
+		{
+			
+		}
+		
+		if((userChoice == 'r') && (pcChoice == 'r'))
+		{
+			roundWinner = 2;
+		}
+		else if((userChoice == 'p') && (pcChoice == 'p'))
+		{
+			roundWinner = 2;
+		}
+		else if((userChoice == 's') && (pcChoice == 's'))
+		{
+			roundWinner = 2;
+		}
+		
+		else if((userChoice == 'r') && (pcChoice == 'p'))
+		{
+			roundWinner = 0;
 			pcWins++;
 		}
+		else if((userChoice == 'p') && (pcChoice == 's'))
+		{
+			roundWinner = 0;
+			pcWins++;
+		}
+		else if((userChoice == 's') && (pcChoice == 'r'))
+		{
+			roundWinner = 0;
+			pcWins++;
+		}
+		
+		else if((userChoice == 'p') && (pcChoice == 'r'))
+		{
+			roundWinner = 1;
+			userWins++;
+		}
+		else if((userChoice == 's') && (pcChoice == 'p'))
+		{
+			roundWinner = 1;
+			userWins++;
+		}
+		else if((userChoice == 'r') && (pcChoice == 's'))
+		{
+			roundWinner = 1;
+			userWins++;
+		}
+		
+		
+		if(roundWinner == 2)
+		{
+			printf("There is a tie!\nNo points at all\n\nScore:\nPC: %d\nUser: %d\n", pcWins, userWins);
+		}
+		else if(roundWinner == 0)
+		{
+			printf("One point to user!\nScore:\nPC: %d\nUser: %d\n", pcWins, userWins);
+		}
+		else
+		{
+			printf("One point to PC!\nScore:\nPC: %d\nUser: %d\n", pcWins, userWins);
+		}
 	}
+	if(pcWins > userWins)
+	{
+		win = 'l';
+	}
+	else
+	{
+		win = 'w';
+	}
+	
 	return win;
 }
 
