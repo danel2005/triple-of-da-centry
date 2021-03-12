@@ -6,8 +6,10 @@
 
 int start(void);
 char finish();
+/*
 char game(int difficultyLevel);
 char pcRand(int difficulty, int userChoice);
+*/
 
 int main()
 {
