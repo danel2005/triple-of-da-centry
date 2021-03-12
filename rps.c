@@ -18,6 +18,7 @@ int main()
 	{
 		difficultyLevel = start(); //Start
 		
+		/*
 		win = game(difficultyLevel);
 		if(win == 'w')
 		{
@@ -28,6 +29,8 @@ int main()
 		{
 			printf("You lose the game...");
 		}
+		*/
+		
 		play = finish(); //Finish
 	}
 	printf("\nThanks for playing!"); //Greetings
@@ -40,7 +43,7 @@ int start(void)
 	int difficultyLevel = 0;
 	char agree = ' ';
 	printf("Welcome to Rock Paper Scissors!\n");
-	printf("The game is best of BEST_OF\n");
+	printf("The game is best of %d\n", BEST_OF);
 	do{
 		printf("0 - Easy\n1 - Hard\n2 - Impossible\n");
 		printf("Choose your difficulty level: ");
@@ -96,6 +99,8 @@ char finish()
 	return play;
 }
 
+
+/*
 char game(int difficultyLevel)
 {
 	srand(time(NULL));
@@ -286,3 +291,4 @@ char pcRand(int difficulty, int userChoice)
 	return pcChoice;
 }
 
+*/
