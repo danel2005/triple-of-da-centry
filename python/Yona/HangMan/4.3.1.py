@@ -18,11 +18,15 @@ print(UNDERLINE_STRING[ : len(user_word) * 2 - 1])
 first_guess = input("Guess a letter: ")
 first_guess = first_guess.lower()
 
-def is_valid_input(letter_guessed):
+if((len(first_guess) > 1) and not first_guess.isalpha()):
+    print("E3")
 
-    if((len(letter_guessed) > 1) or not letter_guessed.isalpha()):
-        return 0
+elif(len(first_guess) > 1):
+    print("E1")
 
-    else:
-        return 1
+elif(first_guess > "z") or (first_guess < "a"):
+    print("E2")
+
+else:
+    print(first_guess)
 
